@@ -1,0 +1,502 @@
+{
+  "id": "2d7aac8a-554f-41ad-a55f-560cfc1d6320",
+  "version": "2.0",
+  "name": "HW25_SignIn_Rozetka",
+  "url": "https://rozetka.com.ua/",
+  "tests": [{
+    "id": "a368b895-b9d1-4085-a773-8caa49ac3011",
+    "name": "SingIn_Negative_FillFields_WrongPassword",
+    "commands": [{
+      "id": "57319eb6-8e09-40f9-b281-a003fabe0d23",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c69c9328-7cfe-476d-b11f-7411de321b85",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1333x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f91710fa-d49e-4e80-84f0-6e5132bbd21e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.header-actions__item--user use",
+      "targets": [
+        ["css=.header-actions__item--user use", "css:finder"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "151918fd-dc2a-41b2-931b-b9fb00000283",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-actions__item--user use",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "743061e1-6b88-4adf-9d84-45dba7a79240",
+      "comment": "",
+      "command": "store",
+      "target": "id=auth_email",
+      "targets": [],
+      "value": "email"
+    }, {
+      "id": "a21dad56-996d-4aef-84f0-9260b7e04fc4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "${email}",
+      "targets": [
+        ["id=auth_email", "id"],
+        ["css=#auth_email", "css:finder"],
+        ["xpath=//input[@id='auth_email']", "xpath:attributes"],
+        ["xpath=//fieldset/div/input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0c6f4129-1581-4a4c-badd-b5993ad2d86d",
+      "comment": "",
+      "command": "click",
+      "target": "${email}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2ae1c01-c939-4f35-9b99-9cd91c35bf02",
+      "comment": "",
+      "command": "type",
+      "target": "${email}",
+      "targets": [],
+      "value": "11111111@ukr.net"
+    }, {
+      "id": "acad75c0-f7d7-4567-8cf5-a4f088347f60",
+      "comment": "",
+      "command": "store",
+      "target": "id=auth_pass",
+      "targets": [],
+      "value": "pass"
+    }, {
+      "id": "d1cef72d-1193-4bbd-9b7f-a08c5196a6a2",
+      "comment": "",
+      "command": "click",
+      "target": "${pass}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93344d13-457d-4b73-9152-2580a4bce708",
+      "comment": "",
+      "command": "type",
+      "target": "${pass}",
+      "targets": [
+        ["id=auth_pass", "id"],
+        ["css=#auth_pass", "css:finder"],
+        ["xpath=//input[@id='auth_pass']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Test123456789"
+    }, {
+      "id": "db66f392-05c8-4193-8504-5db2bb733788",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[5]/button",
+      "targets": [
+        ["css=.auth-modal__submit", "css:finder"],
+        ["xpath=//div[5]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Войти')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf98f47a-3560-44bb-bd7b-bf58ced33fb7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.form__hint",
+      "targets": [
+        ["id=auth_email", "id"],
+        ["css=#auth_email", "css:finder"],
+        ["xpath=//input[@id='auth_email']", "xpath:attributes"],
+        ["xpath=//fieldset/div/input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1345f06b-ebb1-4cff-a5df-0ee43c055067",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=strong",
+      "targets": [
+        ["css=strong", "css:finder"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Введен неверный пароль!')]", "xpath:innerText"]
+      ],
+      "value": "Введен неверный пароль!"
+    }]
+  }, {
+    "id": "446edfeb-b564-43e4-a5b2-aa36486bb7a2",
+    "name": "SingIn_Negative_FillFields_NotValidEmail",
+    "commands": [{
+      "id": "415aeff0-d804-4dbb-9339-d5538f7d0e63",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2268975-874b-4b18-9ec8-4f381d8b1fd9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1333x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08d5877d-b795-4c0e-8118-856e85320fbf",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.header-actions__item--user use",
+      "targets": [
+        ["css=.header-actions__item--user use", "css:finder"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d0e7d0d0-30f1-4c0b-9723-724698845324",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-actions__item--user use",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d20fd03e-5d32-4bc4-92ec-96cc76dd1ac7",
+      "comment": "",
+      "command": "store",
+      "target": "id=auth_email",
+      "targets": [],
+      "value": "email"
+    }, {
+      "id": "eaa990a4-9482-4a69-9273-f6a21cda632b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "${email}",
+      "targets": [
+        ["id=auth_email", "id"],
+        ["css=#auth_email", "css:finder"],
+        ["xpath=//input[@id='auth_email']", "xpath:attributes"],
+        ["xpath=//fieldset/div/input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d5588a94-49f3-48cb-a5a2-e0fbd820460d",
+      "comment": "",
+      "command": "click",
+      "target": "${email}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d24b5d8f-df88-46aa-b6d3-e7c5fc605138",
+      "comment": "",
+      "command": "type",
+      "target": "${email}",
+      "targets": [],
+      "value": "111111111111"
+    }, {
+      "id": "9be7bac2-3343-4763-b25b-f76cc8c7a6eb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@id='auth_pass']",
+      "targets": [
+        ["id=auth_pass", "id"],
+        ["css=#auth_pass", "css:finder"],
+        ["xpath=//input[@id='auth_pass']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3685543c-a3e0-4d51-8f8d-98921975e811",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.error-message",
+      "targets": [
+        ["css=.error-message", "css:finder"],
+        ["xpath=//fieldset/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Введен неверный адрес эл.почты или номер телефона')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "473998b1-7d7f-478d-aa5d-ed40b15f4e5a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.error-message",
+      "targets": [
+        ["css=strong", "css:finder"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Введен неверный пароль!')]", "xpath:innerText"]
+      ],
+      "value": "Введен неверный адрес эл.почты или номер телефона"
+    }]
+  }, {
+    "id": "046eb93f-5c01-4022-aa7c-4c89dbf0cfc6",
+    "name": "SingIn_Negative_withFacebook",
+    "commands": [{
+      "id": "32570ba2-e348-4a1b-9232-f4da5d109a30",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4464948c-0558-4a40-b6ef-60045b98c784",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1333x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2afc9ce-6a0f-40de-86b2-6fe79f16f2b0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.header-actions__item--user use",
+      "targets": [
+        ["css=.header-actions__item--user use", "css:finder"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5653b6c9-931a-45f9-8b6c-09de218d2e9f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-actions__item--user use",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f66df96-aaf8-491c-8bd5-4879f5f51127",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.auth-modal__social-button_type_facebook",
+      "targets": [
+        ["css=.auth-modal__social-button_type_facebook", "css:finder"],
+        ["xpath=(//button[@type='button'])[22]", "xpath:attributes"],
+        ["xpath=//rz-social-auth/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Facebook')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5fa68f00-a554-441a-b6ae-e4dce2b7fbd0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.auth-modal__social-button_type_facebook",
+      "targets": [
+        ["css=.auth-modal__social-button_type_facebook", "css:finder"],
+        ["xpath=(//button[@type='button'])[22]", "xpath:attributes"],
+        ["xpath=//rz-social-auth/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Facebook')]", "xpath:innerText"]
+      ],
+      "value": "50000",
+      "opensWindow": true,
+      "windowHandleName": "Facebook",
+      "windowTimeout": 10000
+    }, {
+      "id": "ca3b2764-e90a-475f-a92e-f8f475b0063d",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "100000"
+    }, {
+      "id": "c243ee1c-f7cb-4f02-825b-38699cd8f82b",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${Facebook}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b1c8e4d-b175-4a4b-bd00-b8680b6bb26e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@id='email']",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[@id='email_container']/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8fb7b9d9-c908-4eae-9286-777967f14bc4",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [],
+      "value": "1@ukr.net"
+    }, {
+      "id": "3404796f-4495-4f99-83e9-91b9effb3b42",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@id='pass']",
+      "targets": [
+        ["id=pass", "id"],
+        ["name=pass", "name"],
+        ["css=#pass", "css:finder"],
+        ["xpath=//input[@id='pass']", "xpath:attributes"],
+        ["xpath=//div[@id='loginform']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b08ecd6-4e27-4eae-86a6-1fd43075db3e",
+      "comment": "",
+      "command": "type",
+      "target": "id=pass",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "9516a6b3-1fb0-4c5e-ad56-48fe51bb3e69",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//label[@id='loginbutton']",
+      "targets": [
+        ["id=loginbutton", "id"],
+        ["css=#loginbutton", "css:finder"],
+        ["xpath=//label[@id='loginbutton']", "xpath:attributes"],
+        ["xpath=//div[@id='buttons']/label[2]", "xpath:idRelative"],
+        ["xpath=//label[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0d00250-f20b-40fd-800e-31f714186fe9",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2000"
+    }, {
+      "id": "9dfede37-5f0a-40e5-85fc-e57143a30a21",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=error_box",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f2d8326-b152-4608-849d-1d881d16b216",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#error_box > div:nth-child(2)",
+      "targets": [
+        ["css=#error_box > div:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='error_box']/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]", "xpath:position"]
+      ],
+      "value": "Ви ввели неправильний пароль. Забули пароль?"
+    }]
+  }, {
+    "id": "9a3a8ad1-e801-4643-bcff-37ef45069744",
+    "name": "SingIn_Negative_withGoogle",
+    "commands": [{
+      "id": "0122fb4a-5b75-4b72-a3e6-85877ae7bd91",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a51720bd-52a0-4b52-b1ed-2110fc844df9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1333x768",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d0452eb-e0dc-40f1-9d87-fd8e7e8180dc",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.header-actions__item--user use",
+      "targets": [
+        ["css=.header-actions__item--user use", "css:finder"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "14e257aa-e057-4332-ac62-0d046c388e66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header-actions__item--user use",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b38a9e2-1d09-4ccd-9a1c-c87895d04838",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.button--large:nth-child(2)",
+      "targets": [
+        ["css=.button--large:nth-child(2)", "css:finder"],
+        ["xpath=(//button[@type='button'])[18]", "xpath:attributes"],
+        ["xpath=//rz-social-auth/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Google')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "dae34d71-9d8b-402c-9a46-f95fa17f111f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button--large:nth-child(2)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f122e34-05fa-42d8-a5b4-4235a5068ab7",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "50000"
+    }, {
+      "id": "e8c42c2c-1570-4bd1-b94f-9f26002772ff",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.header__button > .ng-tns-c109-1 > .ng-tns-c109-1",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "22a6bbeb-f136-485c-b009-6f8e012a8961",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header__button > .ng-tns-c109-1 > .ng-tns-c109-1",
+      "targets": [
+        ["css=.header__button > .ng-tns-c109-1 > .ng-tns-c109-1", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "016163b7-e7f9-4361-8a79-58efe043d815",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=.side-menu__auth-wrap",
+      "targets": [
+        ["css=.side-menu__auth-wrap", "css:finder"],
+        ["xpath=//div[@id='cdk-overlay-16']/nav/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://rozetka.com.ua/cabinet/personal-information')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4a54e81d-2828-4bc6-a512-53ffeeb0a1af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.side-menu__auth-wrap",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6794776-f8eb-4703-aa58-3311d18a65f4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "linkText=Мои заказы",
+      "targets": [],
+      "value": "30000"
+    }]
+  }],
+  "suites": [{
+    "id": "8632f7ec-3ef4-4cba-8cd1-01d4fb1003a9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://rozetka.com.ua/"],
+  "plugins": []
+}
